@@ -53,7 +53,7 @@ public partial class logistics : System.Web.UI.Page
     }
     protected void DropDownListOrg_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Label_Temp.Text = "Ajax";
+        Label_Temp.Text = "";
         DropDownListBrig.Items.Clear();
         string commandString = "SELECT CODE,NAME_BRIG FROM IZP_SPR_BRIG WHERE HIDDEN=0 AND CODE_ORG<>0 AND CODE_ORG=" + DropDownListOrg.SelectedValue + " ORDER BY NAME_BRIG";
         OleDbCommand myCommand = new OleDbCommand(commandString, myConnection);

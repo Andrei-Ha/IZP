@@ -142,12 +142,14 @@
                             <HeaderStyle Font-Bold="True" Font-Italic="True" Font-Overline="False" Font-Strikeout="False"
                             Font-Underline="False" HorizontalAlign="Center" Wrap="True" ForeColor="White" />
                         </radG:GridBoundColumn>
-                        <radG:GridTemplateColumn HeaderText="заводской №" SortExpression="FAC_NUM" UniqueName="FAC_NUM" >
+                        <radG:GridTemplateColumn HeaderText="заводской № / (№ ячейки)" SortExpression="FAC_NUM" UniqueName="FAC_NUM" >
                                     <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" BorderWidth="1px" Wrap="True" Font-Size="X-Small" />
                                     <HeaderStyle Font-Bold="True" Font-Italic="True" Font-Overline="False" Font-Strikeout="False"
                                         Font-Underline="False" HorizontalAlign="Center" Wrap="True" ForeColor="White" />
                             <ItemTemplate>
-                                <div style="text-align:center"><asp:HyperLink ID="ValLink" runat="server" Font-Italic="true"  Text='<%# Bind("FAC_NUM") %>'></asp:HyperLink></div>
+                                <div style="text-align:center"><asp:HyperLink ID="ValLink" runat="server" Font-Italic="true"  Text='<%# Bind("FAC_NUM") %>'></asp:HyperLink>&nbsp;&nbsp;/&nbsp;&nbsp;   
+                                    <asp:Label ID="Label_Cell" runat="server" Font-Italic="true" Text ='<%# Bind("CELL") %>'></asp:Label>
+                                </div>
                             </ItemTemplate>
                         </radg:GridTemplateColumn>
                         <radG:GridBoundColumn DataField="DATE_IN" DataType="System.DateTime" HeaderText="дата поступлен."
