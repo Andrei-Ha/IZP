@@ -15,7 +15,7 @@ public partial class Default : System.Web.UI.Page
     OleDbConnection myConnection = new OleDbConnection(connectionString);
     protected void FuncParam()
     {
-        string commandString = "SELECT TO_CHAR(DATE_,'DD.MM.YYYY') as DATE_,T_WATER,T_AIR,HUMIDITY,PRESSURE,FIO_EXEC,FIO_CHIEF,DATE_INS FROM IZP_PARAM";
+        string commandString = "SELECT TO_CHAR(DATE_,'DD.MM.YYYY') as DATE_,T_WATER,T_AIR,HUMIDITY,PRESSURE,FIO_EXEC,FIO_CHIEF,DATE_INS, DATE_PRICE FROM IZP_PARAM";
         OleDbCommand myCommand = new OleDbCommand(commandString, myConnection);
         myConnection.Open();
         OleDbDataReader reader = myCommand.ExecuteReader();
@@ -38,14 +38,15 @@ public partial class Default : System.Web.UI.Page
         {
             FuncParam();
             Label2.Visible = false;
-            string commandStringParam = "SELECT TO_CHAR(DATE_,'dd,MM,yyyy') as DATE_,T_WATER,T_AIR,HUMIDITY,PRESSURE,FIO_EXEC,FIO_CHIEF FROM IZP_PARAM";
+            string commandStringParam = "SELECT TO_CHAR(DATE_,'dd,MM,yyyy') as DATE_,T_WATER,T_AIR,HUMIDITY,PRESSURE,FIO_EXEC,FIO_CHIEF, TO_CHAR(DATE_PRICE,'dd,MM,yyyy') as DATE_PRICE FROM IZP_PARAM";
             OleDbCommand myCommandParam = new OleDbCommand(commandStringParam, myConnection);
             myConnection.Open();
             OleDbDataReader Reader = myCommandParam.ExecuteReader();
             while (Reader.Read())
             {
                 DateTime date_in = Convert.ToDateTime(Reader["DATE_"]);
-                //RadDatePicker_date_dok.SelectedDate = date_in;
+                DateTime date_price = Convert.ToDateTime(Reader["DATE_PRICE"]);
+                RadDatePicker_Price.SelectedDate = date_price;
                 T_WATER.Text = Convert.ToString(Reader["T_WATER"]);
                 T_AIR.Text = Convert.ToString(Reader["T_AIR"]);
                 HUMIDITY.Text = Convert.ToString(Reader["HUMIDITY"]);
@@ -68,7 +69,7 @@ public partial class Default : System.Web.UI.Page
        
         //Label2.Visible = true;
         //Label2.Text = "Валидация пройдена";
-        string commandString = "UPDATE IZP_PARAM SET DATE_='" + RadDatePicker_date_dok.SelectedDate.ToString().Substring(0, 10) + "',T_WATER='"+ T_WATER.Text +"',T_AIR='" + T_AIR.Text + "',HUMIDITY='" + HUMIDITY.Text + "',FIO_EXEC='" + FIO_EXEC.Text + "',FIO_CHIEF='" + FIO_CHIEF.Text + "',DATE_INS=sysdate";
+        string commandString = "UPDATE IZP_PARAM SET DATE_='" + RadDatePicker_date_dok.SelectedDate.ToString().Substring(0, 10) + "',T_WATER='"+ T_WATER.Text +"',T_AIR='" + T_AIR.Text + "',HUMIDITY='" + HUMIDITY.Text + "',FIO_EXEC='" + FIO_EXEC.Text + "',FIO_CHIEF='" + FIO_CHIEF.Text + "',DATE_INS=sysdate, DATE_PRICE='" + RadDatePicker_Price.SelectedDate.ToString().Substring(0, 10) + "'";
         OleDbCommand myCommand = new OleDbCommand(commandString, myConnection);
         //Label1.Text = commandStringTEC;
         myConnection.Open();

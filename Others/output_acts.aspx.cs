@@ -352,9 +352,21 @@ public partial class output_acts : System.Web.UI.Page
                 sheet.Cells["F9"].Value = "";
                 sheet.Cells["G9"].Value = "";
                 sheet.Cells["I9"].Value = "";
-                /*sheet.Cells["F9"].Value = "\"" + data.ToString("dd") + "\"";  изменено 21.12.2016
+                // 2021.06.24
+                DateTime date_price = DateTime.Now;
+                string commandStringParam = "SELECT TO_CHAR(DATE_PRICE,'dd,MM,yyyy') as DATE_PRICE FROM IZP_PARAM";
+                OleDbCommand myCommandParam = new OleDbCommand(commandStringParam, myConnection);
+                myConnection.Open();
+                OleDbDataReader Reader = myCommandParam.ExecuteReader();
+                while (Reader.Read())
+                {
+                    date_price = Convert.ToDateTime(Reader["DATE_PRICE"]);
+                }
+                Reader.Close();
+                myConnection.Close();
+                sheet.Cells["B15"].Value = "\"" + date_price.ToString("dd") + "\"";
                 string smm = "";
-                switch (data.ToString("MM"))
+                switch (date_price.ToString("MM"))
                 {
                     case "01":
                         smm = "января";
@@ -393,9 +405,9 @@ public partial class output_acts : System.Web.UI.Page
                         smm = "декабря";
                         break;
                 }
-                sheet.Cells["G9"].Value = smm;
-                sheet.Cells["I9"].Value = data.ToString("yyyy");*/
-                
+                sheet.Cells["D15"].Value = smm;
+                sheet.Cells["E15"].Value = date_price.ToString("yyyy");
+
                 // Номер акта
                 string new_n_org = TextBox_N_ORG.Text, new_unn = TextBox_UNN.Text, new_fio = TextBox_FIO.Text;
                 if (new_unn.Length > 0)

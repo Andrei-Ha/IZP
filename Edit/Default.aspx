@@ -24,7 +24,14 @@
                                 </DateInput>
                              </radCln:RadDatePicker>    
                         </td>
-                        <td>       
+                        <td style="background-color:lightgray">
+                            Прейскурант цен от<br />
+                            <radCln:RadDatePicker ID="RadDatePicker_Price" runat="server"  MaxDate="2050-12-31" MinDate="2007-01-01" Width="110px" Font-Bold="False" Font-Italic="False">
+                                <Calendar ID="Calendar2" runat="server" Skin="WebBlue">
+                                </Calendar>
+                                <DateInput Skin="" Font-Bold="True" Font-Italic="True" Font-Size="Medium">
+                                </DateInput>
+                             </radCln:RadDatePicker>
                         </td>        
                     </tr>
                     <tr>
