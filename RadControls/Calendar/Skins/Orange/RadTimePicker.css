@@ -1,0 +1,79 @@
+/* Timepicker Orange skin */
+
+.radTimeTableCss_Orange caption
+{
+    display: none;
+}
+
+.radTimeTableCss_Orange 
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	border: solid 1px #976311;
+	background: white;
+	cursor: pointer;
+	cursor: default;
+	background: #ffe300;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
+.radTimeTableCss_Orange td
+{
+	border: solid 1px #f2c901;
+}
+
+.radTimeTableCss_Orange a
+{
+	display: block;
+	font-size: 11px;
+	text-decoration: none;
+	color: #7f7f7f;
+	line-height: 21px;
+	padding: 2px;
+	background: #ffe300;
+}
+
+.radTimeOverCss_Orange a
+{
+	background: white;
+}
+
+.radHeaderCss_Orange
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	height: 30px;
+	background: orange url('Img/calendarBg.gif') repeat-x;
+}
+
+.radItemCss_Orange a,
+.radAlternatingItemCss_Orange
+{
+    /**/
+}
+
+.radItemCss_Orange a:hover,
+.radAlternatingItemCss_Orange a:hover
+{	
+	/**/
+}
+
+.radPopupImage_Orange img
+{
+	vertical-align: middle;
+	_vertical-align: top; /* IE fix */	
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: -1px; /* IE margins fix */
+	_margin-top: 0px; 
+	border-width: 0px;
+}
+
+.radDisabled_Orange img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}

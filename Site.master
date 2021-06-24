@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<%@ Register TagPrefix="radM" Assembly="RadMenu.Net2" Namespace="Telerik.WebControls" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+      /*table {
+        width: 100%;  Ширина таблицы 
+        border: 1px solid blue;  Рамка вокруг таблицы 
+        margin: auto;
+           }*/
+   td {
+    vertical-align: top; /* Выравнивание по верхнему краю ячеек */
+   }
+   #colcenter {
+    background: #fc5;
+    text-align:center; /* Выравнивание по правому краю */
+    vertical-align:middle;
+   }
+   .styleBlack
+        {
+            color: #000000;
+        }
+   .styleGr 
+   {
+         font-size:xx-small;
+         color:Gray;
+   }
+   .styleOr 
+   {
+       color:Orange;
+   }
+   .styleR 
+   {
+       color:Red;
+   }
+   .styleRBack 
+   {
+       background-color:Red;
+       color:White;
+   }   
+   .styleG 
+   {
+       color:Green;
+   }    
+  </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+            <table width="900">
+                <tr>
+                    <td>
+                        <h1>
+                             СИЗП. Средства защиты
+                        </h1>
+                    </td>
+                    <td style="vertical-align:bottom; text-align:right; color:White">
+                        <asp:Label ID="InjectScript" runat="server" />
+                        <asp:Button ID="ButtonExit" runat="server" Text="выход" onclick="ButtonExit_Click" />
+                        <asp:Button ID="ButtonEnter" runat="server" Text="вход" onclick="ButtonEnter_Click" />
+                    </td>
+                </tr>
+            </table>
+            </div>
+                <div class="clear hideSkiplink">
+            <radM:RadMenu ID="RadMenu1" Runat="server" Width="100%">
+                <Items>
+                    <radM:RadMenuItem runat="server" Text="Главная" NavigateUrl="~/Default.aspx"/>
+                    <radM:RadMenuItem runat="server" Text="Параметры" NavigateUrl="~/Edit/Default.aspx"/>
+                    <radM:RadMenuItem runat="server" Text="Пинские электрические сети">
+                        <Items>
+                            <radM:RadMenuItem runat="server" 
+                                Text="Журнал испытания СЗ" NavigateUrl="~/Pes/Book.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" BackColor="lightskyblue" 
+                                Text="Логистика СЗ" NavigateUrl="~/Pes/logistics.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem  runat="server" BackColor="#F0E68C" 
+                                Text="Журнал выдачи СЗ" NavigateUrl="~/Pes/give.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" BackColor="#F0FFFF" 
+                                Text="Контроль за периодичностью испытания СЗ" NavigateUrl="~/monitoring.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" BackColor="#DCDCDC" 
+                                Text="Архив" NavigateUrl="~/Archive_PES.aspx">
+                            </radM:RadMenuItem>
+                        </Items>                    
+                    </radM:RadMenuItem>
+                    <radM:RadMenuItem runat="server" Text="Сторонние организации" >
+                        <Items>
+                            <radM:RadMenuItem runat="server" NavigateUrl="~/Others/output_acts.aspx" Text="Выписка акта">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" NavigateUrl="~/Others/Book.aspx" Text="Журнал испытания средств защиты">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" BackColor="lightskyblue" 
+                                Text="Логистика СЗ" NavigateUrl="~/Others/logistics.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem  runat="server" BackColor="#F0E68C" 
+                                Text="Журнал выдачи СЗ" NavigateUrl="~/Others/give.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" NavigateUrl="~/Others/monitoring.aspx" Text="Контроль за периодичностью испытания средств защиты">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" Text="Архив" NavigateUrl="~/Archive.aspx">
+                            </radM:RadMenuItem>
+                        </Items>
+                    </radM:RadMenuItem>
+                    <radM:RadMenuItem runat="server" Text="Справочники">
+                        <Items>
+                            <radM:RadMenuItem runat="server" 
+                                Text="Испытательное оборудование" NavigateUrl="~/Edit/hdbk/Spr_equip.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" 
+                                Text="Периодичность испытаний и цены" NavigateUrl="~/Edit/hdbk/Spr_period.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" 
+                                Text="Сторонние организации" NavigateUrl="~/Edit/hdbk/Spr_org.aspx">
+                            </radM:RadMenuItem>
+                            <radM:RadMenuItem runat="server" 
+                                Text="Средства защиты" NavigateUrl="~/Edit/hdbk/Spr_protect.aspx">
+                            </radM:RadMenuItem>
+                        </Items> 
+                    </radM:RadMenuItem>
+                </Items>
+            </radM:RadMenu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">    
+    </div>
+    </form>
+</body>
+</html>

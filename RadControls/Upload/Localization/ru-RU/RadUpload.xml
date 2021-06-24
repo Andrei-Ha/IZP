@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<localization>
+	<string id="Add">Добавить</string>
+	<string id="Delete">Удалить</string>
+	<string id="Select">Выбрать</string>
+	<string id="Remove">Remove</string>
+	<string id="Clear">Очистить</string>
+</localization>

@@ -1,0 +1,162 @@
+/* Telerik RadCalendar orange skin */
+
+.calendarWrapper_Orange,
+.radCalPreviewDefault_Orange
+{
+	background: #e88908 url('Img/calendarBg.gif') repeat-x;
+	border: solid 1px #976311 !important;
+	cursor: default;
+	font: normal 12px Arial, Verdana, Sans-serif;
+	color: #686868;
+	width: 247px;
+}
+
+.calendarWrapper_Orange td,
+.radCalPreviewDefault_Orange td
+{
+	vertical-align: top;
+}
+
+.TableLayout_Orange
+{
+	font: normal 11px Arial, Verdana, Sans-Serif;
+	margin-bottom: 4px;
+}
+
+.TableLayout_Orange td
+{
+	text-align: center;
+	vertical-align: middle;
+	color: #7f7f7f;
+	cursor: default;
+	width: 28px;
+	height: 21px;
+}
+
+.TableLayout_Orange td a
+{
+	font: normal 11px Arial, Verdana, Sans-Serif;
+	text-decoration: none;
+	cursor: default;
+	color: #7f7f7f;
+}
+
+.radCalWeekendDefault_Orange,
+.radCalWeekendHover_Orange,
+.radCalWeekendSelect_Orange
+{
+	border: solid 1px #f2c901;
+	background: #fff38e;
+}
+
+.radCalDefault_Orange
+{
+	border: solid 1px #f2c901;
+	background: #ffe300;
+}
+
+.radCalHover_Orange
+{
+	border: solid 1px #f2c901;
+	background: #fff9c6;
+}
+
+.radCalSelect_Orange
+{
+	border: solid 1px #f2c901;
+	background: #f6c903;
+}
+
+.otherMonth_Orange
+{
+	color: white !important;
+	border: solid 1px #f2c901;
+	background: #ffe300;
+}
+
+.otherMonth_Orange a
+{
+	color: white !important;
+	background: #ffe300;
+}
+
+.outOfRange_Orange
+{
+	color: white !important;
+	border: solid 1px #f2c901;
+	background: #ffe300;	
+}
+
+.DaysOfWeek_Orange
+{
+	color: #000 !important;
+	font-weight: bold;
+	cursor: default;
+	background: transparent;
+	text-align: center;
+	padding: 0px 3px;
+}
+
+.titlebar_Orange
+{
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	background: transparent;
+	line-height: 30px;
+}
+
+.MonthYearFastNav_Orange
+{
+	
+	border: 1px solid #976311;
+	background: #ffe300;
+	border-collapse: collapse;
+	filter: progid:DXImageTransform.Microsoft.Shadow(direction=140,color=#666666,strength=3);
+}
+
+.MonthYearFastNav_Orange td
+{
+	text-align: center;
+	vertical-align: middle;
+	border-bottom: 1px solid #976311;
+	cursor: hand;
+	padding: 4px;
+	font: normal 11px Arial, Verdana, Sans-Serif;
+	color: black;
+}
+
+.MonthYearFastNav_Orange td.selected_Orange
+{
+	background: #e4900c;
+	color: white;
+	border-color: #976311;
+}
+
+.MonthYearFastNav_Orange td input
+{
+	background: transparent url('Img/MonthYearFastNavBtnBg.gif') repeat-x;
+	border: solid 1px #e4900c;
+	font: normal 11px Arial, Verdana, Sans-Serif;
+	color: black;
+	float: left;
+	margin-right: 1px;
+}
+
+.radPopupImage_Orange img
+{
+	vertical-align: middle;
+	_vertical-align: top; /* IE fix */	
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: -1px; /* IE margins fix */
+	_margin-top: 0px; 
+	border-width: 0px;
+}
+
+.radDisabled_Orange img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
